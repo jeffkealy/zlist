@@ -1,0 +1,91 @@
+body {
+  padding-bottom: 30px;
+  min-height: 100%;
+  overflow: visible;
+}
+
+.fb-container {
+  max-width: 400px;
+  position: relative;
+}
+
+.underline {
+  text-decoration: underline;
+}
+/* hide profile pic */
+.x1rg5ohu.x1n2onr6.x3ajldb.x1ja2u2z {
+  display: none;
+}
+/* card container */
+.x1lq5wgf.xgqcy7u.x30kzoy.x9jhf4c.x1lliihq {
+  background-color: #bee5c3;
+  padding: 5px 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  transition: all 300ms linear;
+  border: 1px solid #a2a2a2;
+}
+/* card container links */
+.x1lq5wgf.xgqcy7u.x30kzoy.x9jhf4c.x1lliihq a {
+  color: inherit;
+}
+/* icon, add friend, ... */
+.x9f619.x1n2onr6.x1ja2u2z.x193iq5w.xeuugli.x6s0dn4.x78zum5.x2lah0s.x1fbi1t2.xl8fo4v {
+  display: none;
+}
+.x78zum5 {
+}
+/* name in <a> tag */
+.x1i10hfl.xjbqb8w.x6umtig.x1b1mbwd.xaqea5y.xav7gou.x9f619.x1ypdohk.xt0psk2.xe8uvvx.xdj266r.x11i5rnm.xat24cr.x1mh8g0r.xexx8yu.x4uap5.x18d9i69.xkhd6sd.x16tdsg8.x1hl2dhg.xggy1nq.x1a2a7pz.xt0b8zv.xzsf02u.x1s688f {
+  display: block;
+  margin-top: 10px;
+  font-size: 20px;
+}
+/* short descirption */
+.x193iq5w.xeuugli.x13faqbe.x1vvkbs.xlh3980.xvmahel.x1n0sxbx.x1lliihq.x1s928wv.xhkezso.x1gmr53x.x1cpjm7i.x1fgarty.x1943h6x.x1tu3fi.x676frb.x1pg5gke.xvq8zen.xo1l8bm.x12scifz.x1yc453h {
+  display: none;
+}
+/* added by parent */
+.x193iq5w.xeuugli.x13faqbe.x1vvkbs.xlh3980.xvmahel.x1n0sxbx.x1lliihq.x1s928wv.xhkezso.x1gmr53x.x1cpjm7i.x1fgarty.x1943h6x.x4zkp8e.x676frb.x1pg5gke.x1sibtaa.xo1l8bm.xi81zsa.x1yc453h {
+  margin-bottom: 10px;
+  display: block;
+}
+.goodbye {
+  background-color: rgb(187, 187, 187);
+  color: #fff;
+  cursor: pointer;
+  max-width: fit-content;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  transition: all 300ms linear;
+  min-width: 127px;
+  text-align: center;
+}
+.selected .goodbye {
+  background-color: rgb(183, 8, 8);
+  color: #fff;
+}
+/* card-container red */
+.x1lq5wgf.xgqcy7u.x30kzoy.x9jhf4c.x1lliihq.red {
+  background-color: rgb(228, 127, 127);
+}
+.remove-list {
+  position: fixed;
+  overflow: scroll;
+  max-width: fit-content;
+  max-height: 500px;
+  height: 100%;
+  right: 15px;
+  top: 300px;
+  margin-bottom: 50px;
+  background-color: #eee;
+  padding: 10px;
+  z-index: 2;
+  border-radius: 5px;
+  box-shadow: 0px 0px 22px 13px rgb(0 0 0 / 37%);
+  margin-bottom: 200px;
+}
+.remove-list h3 {
+  margin: 5px 0 10px;
+}
