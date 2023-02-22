@@ -1,4 +1,10 @@
 $(document).ready(function () {
+  var removeListLocal = JSON.parse(localStorage.getItem("removeListLocal"));
+  console.log("removeListLocal", removeListLocal);
+
+  // var removeList = removeListLocal;
+  var removeList = [];
+
   // adding easier to read classes to fb's classses
   $(".x1lq5wgf.xgqcy7u.x30kzoy.x9jhf4c.x1lliihq").addClass("card-container");
   $(
@@ -7,31 +13,48 @@ $(document).ready(function () {
   $(
     ".x1i10hfl.xjbqb8w.x6umtig.x1b1mbwd.xaqea5y.xav7gou.x9f619.x1ypdohk.xt0psk2.xe8uvvx.xdj266r.x11i5rnm.xat24cr.x1mh8g0r.xexx8yu.x4uap5.x18d9i69.xkhd6sd.x16tdsg8.x1hl2dhg.xggy1nq.x1a2a7pz.xt0b8zv.xzsf02u.x1s688f"
   ).addClass("name");
+  $(
+    ".x1i10hfl.xjbqb8w.x6umtig.x1b1mbwd.xaqea5y.xav7gou.x9f619.x1ypdohk.xt0psk2.xe8uvvx.xdj266r.x11i5rnm.xat24cr.x1mh8g0r.xexx8yu.x4uap5.x18d9i69.xkhd6sd.x16tdsg8.x1hl2dhg.xggy1nq.x1a2a7pz.x1heor9g.xt0b8zv.x1s688f"
+  )
+    .addClass("invited-by-name")
+    .attr("target", "_blank");
   $(".x78zum5.xdt5ytf.xz62fqu.x16ldp7u").addClass("card-content");
   //create removed button
   $("<div class='goodbye'>Remove</div>").insertAfter(".added-by");
   // create list
   $("<div class='remove-list'><h3>On Remove list</h3><div class='remove-list-names'></div></div>").prependTo("body");
+  $(".name").attr("target", "_blank");
   $(".goodbye").click(function () {
     var cardContainer = $(this).closest(".card-container");
     var goodBye = $(this);
     var name = goodBye.closest(".card-content").find(".name").text();
     var nameNoSpaces = name.replace(/\s+/g, "");
+    var localStorageNames = { ...localStorage };
+    var person = { name: name, nameNoSpaces: nameNoSpaces };
     // if card is selected
     if (cardContainer.hasClass("selected")) {
-      console.log("removed 'slected' class");
-      cardContainer.removeClass("red selected");
+      cardContainer.removeClass("selected");
       goodBye.text("Remove");
-      $(`.remove-list-names .${nameNoSpaces}`).remove();
+      removeList = removeList.filter((remove) => remove.nameNoSpaces !== nameNoSpaces);
     }
     // card not selected
     else {
-      console.log("added 'slected' class");
-      cardContainer.addClass("red selected");
+      // console.log("added 'slected' class");
+      cardContainer.addClass("selected");
       goodBye.text("Removed list");
-      $(`<div class="name-list ${nameNoSpaces}">${name}</div>`).appendTo(".remove-list-names");
+      removeList.push(person);
     }
+    // sorty a-z
+    // removeList.sort((a, b) => a.nameNoSpaces.localeCompare(b.nameNoSpaces));
+    $(".remove-list-names").empty();
 
+    for (let i = 0; i < removeList.length; i++) {
+      $(`<div class="name-list ${removeList[i].nameNoSpaces}">${removeList[i].name}</div>`).appendTo(".remove-list-names");
+    }
+    console.log("removeList", removeList);
+    localStorage.setItem("removeListLocal", JSON.stringify(removeList));
+
+    // console.log("localstorage", JSON.parse(localStorage.getItem("removeListLocal")));
     // $(this).css();
   });
 });

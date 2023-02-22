@@ -37,7 +37,7 @@ body {
 }
 /* name in <a> tag */
 .x1i10hfl.xjbqb8w.x6umtig.x1b1mbwd.xaqea5y.xav7gou.x9f619.x1ypdohk.xt0psk2.xe8uvvx.xdj266r.x11i5rnm.xat24cr.x1mh8g0r.xexx8yu.x4uap5.x18d9i69.xkhd6sd.x16tdsg8.x1hl2dhg.xggy1nq.x1a2a7pz.xt0b8zv.xzsf02u.x1s688f {
-  display: block;
+  display: inline-block;
   margin-top: 10px;
   font-size: 20px;
 }
@@ -49,6 +49,9 @@ body {
 .x193iq5w.xeuugli.x13faqbe.x1vvkbs.xlh3980.xvmahel.x1n0sxbx.x1lliihq.x1s928wv.xhkezso.x1gmr53x.x1cpjm7i.x1fgarty.x1943h6x.x4zkp8e.x676frb.x1pg5gke.x1sibtaa.xo1l8bm.xi81zsa.x1yc453h {
   margin-bottom: 10px;
   display: block;
+}
+.invited-by-name {
+  font-size: 10px;
 }
 .goodbye {
   background-color: rgb(187, 187, 187);
@@ -67,24 +70,25 @@ body {
   color: #fff;
 }
 /* card-container red */
-.x1lq5wgf.xgqcy7u.x30kzoy.x9jhf4c.x1lliihq.red {
+.selected.x1lq5wgf.xgqcy7u.x30kzoy.x9jhf4c.x1lliihq {
   background-color: rgb(228, 127, 127);
 }
 .remove-list {
   position: fixed;
   overflow: scroll;
   max-width: fit-content;
+  min-width: 160px;
   max-height: 500px;
-  height: 100%;
   right: 15px;
   top: 300px;
   margin-bottom: 50px;
-  background-color: #eee;
+  background-color: rgba(238, 238, 238, 0.94);
   padding: 10px;
   z-index: 2;
   border-radius: 5px;
   box-shadow: 0px 0px 22px 13px rgb(0 0 0 / 37%);
   margin-bottom: 200px;
+  padding-bottom: 30px;
 }
 .remove-list h3 {
   margin: 5px 0 10px;
