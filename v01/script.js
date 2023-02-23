@@ -1,4 +1,10 @@
 $(document).ready(function () {
+  var removeListLocal = JSON.parse(localStorage.getItem("removeListLocal"));
+  // console.log("removeListLocal", removeListLocal);
+
+  // var removeList = removeListLocal;
+  var removeList = [];
+  var elements;
   // adding easier to read classes to fb's classses
   $("<h2 class='title'>Zlist</h2>").prependTo("body");
   $(
@@ -19,14 +25,6 @@ $(document).ready(function () {
   $(".x1lq5wgf.xgqcy7u.x30kzoy.x9jhf4c.x1lliihq").parent().addClass("card-container");
 
   $(".x78zum5.xdt5ytf.xz62fqu.x16ldp7u").addClass("card-content");
-
-  //give each card a class of the person's name
-  $(`.name`).each(function (index) {
-    let n = $(this).text().replace(/\s/g, "");
-    $(this).closest(".card-container").addClass(n);
-  });
-  //end adding classes
-
   //create removed button
   $("<div class='goodbye'>Remove</div>").insertAfter(".added-by");
   // create list
@@ -37,47 +35,6 @@ $(document).ready(function () {
       </div>
     </div>`).prependTo("body");
   $(".name").attr("target", "_blank");
-
-  var removeListLocal = JSON.parse(localStorage.getItem("removeListLocal"));
-  // console.log("removeListLocal", removeListLocal);
-  var elements;
-  // var removeList = removeListLocal;
-  if (removeListLocal) {
-    var removeList = removeListLocal;
-
-    console.log(removeList);
-    removeList.forEach((person) => {
-      $(`.card-container.${person.nameNoSpaces}`).addClass(`selected ${person.nameNoSpaces}`);
-      $(`.card-container.${person.nameNoSpaces} .goodbye`).text("Removed list");
-      $(`
-      <div class="name-list-entry ${person.nameNoSpaces}">
-        <span class="x-off">X</span>
-        <span class="name-list ${person.nameNoSpaces}">
-        ${person.name} 
-        </span>
-      <div>  
-        `).appendTo(".remove-list-names");
-      elements = $(".name-list"); //generate list of names on remove list for copy button
-
-      // x-off button
-      $(".name-list-entry").click(function () {
-        let classes = $(this).attr("class");
-        let split = classes.split(" ");
-        let nameNoSpaces = split[1];
-        $(`.card-container.${nameNoSpaces} .goodbye`).text("Remove");
-        $(`.card-container.${nameNoSpaces}`).removeClass("selected");
-        // console.log("NameListremoveList before", removeList);
-        removeList = removeList.filter((remove) => remove.nameNoSpaces !== nameNoSpaces);
-
-        $(this).remove();
-        elements = $(".name-list"); //generate list of names on remove list for copy button
-        console.log("removeList", removeList);
-        localStorage.setItem("removeListLocal", JSON.stringify(removeList));
-      });
-    });
-  } else {
-    var removeList = [];
-  }
 
   // remove button
   $(".goodbye").click(function () {
@@ -129,12 +86,12 @@ $(document).ready(function () {
       $(this).remove();
       elements = $(".name-list"); //generate list of names on remove list for copy button
       console.log("removeList", removeList);
-      localStorage.setItem("removeListLocal", JSON.stringify(removeList));
+      // console.log("NameListremoveList", removeList);
     });
 
     elements = $(".name-list"); //generate list of names on remove list for copy button
     console.log("removeList", removeList);
-    localStorage.setItem("removeListLocal", JSON.stringify(removeList));
+    // localStorage.setItem("removeListLocal", JSON.stringify(removeList));
 
     // console.log("localstorage", JSON.parse(localStorage.getItem("removeListLocal")));
     // $(this).css();
