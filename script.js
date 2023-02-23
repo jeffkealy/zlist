@@ -103,7 +103,7 @@ $(document).ready(function () {
     }
 
     elements = $(".name-list"); //generate list of names on remove list for copy button
-    console.log("removeList", removeList);
+    console.log("removeList", removeList.length);
     localStorage.setItem("removeListLocal", JSON.stringify(removeList));
     $(".count").text(removeList.length);
     // console.log("localstorage", JSON.parse(localStorage.getItem("removeListLocal")));
@@ -119,7 +119,7 @@ $(document).ready(function () {
 
     $(this).remove();
     elements = $(".name-list"); //generate list of names on remove list for copy button
-    console.log("removed", removeList);
+    console.log("removed. List has", removeList.length);
     localStorage.setItem("removeListLocal", JSON.stringify(removeList));
     $(".count").text(removeList.length);
   });
