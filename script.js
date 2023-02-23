@@ -22,7 +22,10 @@ $(document).ready(function () {
 
   //give each card a class of the person's name
   $(`.name`).each(function (index) {
-    let n = $(this).text().replace(/\s/g, "");
+    let n = $(this)
+      .text()
+      .replace(/\s/g, "")
+      .replace(/[^\w\s]/gi, "");
     $(this).closest(".card-container").addClass(n);
   });
   //end adding classes
@@ -71,7 +74,7 @@ $(document).ready(function () {
     var cardContainer = $(this).closest(".card-container");
     var goodBye = $(this);
     var name = goodBye.closest(".card-content").find(".name").text();
-    var nameNoSpaces = name.replace(/\s+/g, "");
+    var nameNoSpaces = name.replace(/\s+/g, "").replace(/[^\w\s]/gi, "");
     // var localStorageNames = { ...localStorage };
     var person = { name: name, nameNoSpaces: nameNoSpaces };
     // if card is selected
