@@ -126,6 +126,14 @@ image {
   margin-bottom: 200px;
   padding-bottom: 30px;
 }
+.count {
+  border: 1px solid #000;
+  padding: 0px 6px;
+  margin-left: 4px;
+  border-radius: 5px;
+  display: inline-block;
+  float: right;
+}
 .name-list-entry {
   margin-bottom: 2px;
   cursor: pointer;

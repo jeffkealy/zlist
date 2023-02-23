@@ -31,7 +31,7 @@ $(document).ready(function () {
   $("<div class='goodbye'>Remove</div>").insertAfter(".added-by");
   // create list
   $(`<div class='remove-list'>
-      <h3>On Remove list</h3>
+      <h3>On Remove list <span class="count"></span></h3>
       <span class="copy-button">Copy</span>
       <div class='remove-list-names'>
       </div>
@@ -47,6 +47,7 @@ $(document).ready(function () {
   if (removeListLocal) {
     var removeList = removeListLocal;
   }
+  $(".count").text(removeList.length);
 
   console.log(removeList);
   removeList.forEach((person) => {
@@ -104,7 +105,7 @@ $(document).ready(function () {
     elements = $(".name-list"); //generate list of names on remove list for copy button
     console.log("removeList", removeList);
     localStorage.setItem("removeListLocal", JSON.stringify(removeList));
-
+    $(".count").text(removeList.length);
     // console.log("localstorage", JSON.parse(localStorage.getItem("removeListLocal")));
   });
   // x-button
@@ -120,6 +121,7 @@ $(document).ready(function () {
     elements = $(".name-list"); //generate list of names on remove list for copy button
     console.log("removed", removeList);
     localStorage.setItem("removeListLocal", JSON.stringify(removeList));
+    $(".count").text(removeList.length);
   });
 
   // copy button
