@@ -6,7 +6,9 @@ $(document).ready(function () {
   var removeList = [];
 
   // adding easier to read classes to fb's classses
-  $(".x1lq5wgf.xgqcy7u.x30kzoy.x9jhf4c.x1lliihq").addClass("card-container");
+  $(
+    ".x6s0dn4.x1q0q8m5.x1qhh985.xu3j5b3.xcfux6l.x26u7qi.xm0m39n.x13fuv20.x972fbf.x9f619.x78zum5.x1q0g3np.x1iyjqo2.xs83m0k.x1qughib.xat24cr.x11i5rnm.x1mh8g0r.xdj266r.xeuugli.x18d9i69.x1sxyh0.xurb0ha.xexx8yu.x1n2onr6.x1ja2u2z.x1gg8mnh"
+  ).addClass("card");
   $(
     ".x193iq5w.xeuugli.x13faqbe.x1vvkbs.xlh3980.xvmahel.x1n0sxbx.x1lliihq.x1s928wv.xhkezso.x1gmr53x.x1cpjm7i.x1fgarty.x1943h6x.x4zkp8e.x676frb.x1pg5gke.x1sibtaa.xo1l8bm.xi81zsa.x1yc453h"
   ).addClass("added-by");
@@ -18,6 +20,9 @@ $(document).ready(function () {
   )
     .addClass("invited-by-name")
     .attr("target", "_blank");
+  $(".x1oo3vh0.x1rdy4ex").addClass("card-list");
+  $(".x1lq5wgf.xgqcy7u.x30kzoy.x9jhf4c.x1lliihq").parent().addClass("card-container");
+
   $(".x78zum5.xdt5ytf.xz62fqu.x16ldp7u").addClass("card-content");
   //create removed button
   $("<div class='goodbye'>Remove</div>").insertAfter(".added-by");
@@ -29,7 +34,7 @@ $(document).ready(function () {
     var goodBye = $(this);
     var name = goodBye.closest(".card-content").find(".name").text();
     var nameNoSpaces = name.replace(/\s+/g, "");
-    var localStorageNames = { ...localStorage };
+    // var localStorageNames = { ...localStorage };
     var person = { name: name, nameNoSpaces: nameNoSpaces };
     // if card is selected
     if (cardContainer.hasClass("selected")) {
